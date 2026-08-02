@@ -27,7 +27,7 @@ function HomepageHeader() {
       </div>
     </header>
   );
-}
+} // s
 
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
