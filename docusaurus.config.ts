@@ -81,7 +81,7 @@ const config: Config = {
       title: 'TegridyFarm',
       logo: {
         alt: 'TegridyFarm Logo',
-        src: 'img/TF_Logo.png',
+        src: 'img/logo.png',
       },
     
       items: [
@@ -158,6 +158,7 @@ const config: Config = {
 
     footer: {
       style: 'dark',
+    
       links: [
         {
           title: 'TegridyFarm',
@@ -167,26 +168,64 @@ const config: Config = {
               href: 'https://tegridyfarm.de',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/TegridyFarm96',
+              label: 'Shop',
+              href: 'https://shop.tegridyfarm.de',
+            },
+            {
+              label: 'Contact',
+              href: 'mailto:info@tegridyfarm.de',
             },
           ],
         },
+    
+        {
+          title: 'Partner Sites',
+          items: [
+            {
+              label: 'Holy-Print',
+              href: 'https://holy-print.de',
+            },
+          ],
+        },
+    
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'YouTube',
+              href: 'https://youtube.com/@TegridyFarm',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/TegridyFarm96',
+            },
+            {
+              label: 'LinkedIn',
+              href: '#',
+            },
+            {
+              label: 'TikTok',
+              href: '#',
+            },
+          ],
+        },
+    
         {
           title: 'Legal',
           items: [
             {
-              label: 'Impressum',
-              href: 'https://tegridyfarm.de/impressum',
+              label: 'Imprint',
+              href: '/imprint',
             },
             {
-              label: 'Datenschutz',
-              href: 'https://tegridyfarm.de/datenschutz',
+              label: 'Privacy Policy',
+              href: '/privacy',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} TegridyFarm. Built with Docusaurus.`,
+    
+      copyright: `© ${new Date().getFullYear()} TegridyFarm. All rights reserved.`,
     },
 
     prism: {
