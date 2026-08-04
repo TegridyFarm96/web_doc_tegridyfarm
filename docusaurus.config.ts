@@ -69,97 +69,81 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
-      navbar: {
-        title: 'TegridyFarm',
-        logo: {
-          alt: 'TegridyFarm Logo',
-          src: 'img/logo.svg',
-        },
-      
-        items: [
-          {
-            href: 'https://tegridyfarm.de',
-            label: 'Homepage',
-            position: 'left',
-          },
-          {
-            to: '/docs/tbox',
-            label: 'TBOX',
-            position: 'left',
-            activeBaseRegex: '/docs/tbox/',
-          },
-          {
-            label: 'TempBox',
-            position: 'left',
-            items: [
-              {
-                label: 'Documentation coming later',
-                to: '/docs/tbox',
-              },
-            ],
-          },
-      
-          {
-            label: 'TBOX',
-            position: 'right',
-            items: [
-              {
-                label: 'TBOX',
-                to: '/docs/tbox/devices/tbox/technical-data',
-              },
-              {
-                label: 'SBOX',
-                to: '/docs/tbox/devices/sbox/technical-data',
-              },
-              {
-                label: 'PBOX',
-                to: '/docs/tbox',
-              },
-              {
-                label: 'VBOX',
-                to: '/docs/tbox',
-              },
-              {
-                label: 'HBOX',
-                to: '/docs/tbox',
-              },
-            ],
-          },
-      
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-          },
-      
-          {
-            href: 'https://github.com/TegridyFarm96',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
+
+    navbar: {
+      title: 'TegridyFarm',
+      logo: {
+        alt: 'TegridyFarm Logo',
+        src: 'img/logo.svg',
       },
+
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          href: 'https://tegridyfarm.de',
+          label: 'Homepage',
           position: 'left',
-          label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          to: '/docs/tbox',
+          label: 'TBOX',
+          position: 'left',
+          activeBaseRegex: '/docs/tbox/',
+        },
+        {
+          label: 'TempBox',
+          position: 'left',
+          items: [
+            {
+              label: 'Documentation coming later',
+              to: '/docs/tbox',
+            },
+          ],
+        },
+        {
+          label: 'TBOX',
+          position: 'right',
+          items: [
+            {
+              label: 'TBOX',
+              to: '/docs/tbox/devices/tbox/technical-data',
+            },
+            {
+              label: 'SBOX',
+              to: '/docs/tbox/devices/sbox/technical-data',
+            },
+            {
+              label: 'PBOX',
+              to: '/docs/tbox',
+            },
+            {
+              label: 'VBOX',
+              to: '/docs/tbox',
+            },
+            {
+              label: 'HBOX',
+              to: '/docs/tbox',
+            },
+          ],
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/TegridyFarm96',
           label: 'GitHub',
           position: 'right',
         },
       ],
     },
+
     footer: {
       style: 'dark',
       links: [
@@ -192,6 +176,7 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} TegridyFarm. Built with Docusaurus.`,
     },
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
