@@ -1,23 +1,324 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.hero {
   position: relative;
+  overflow: hidden;
+  min-height: 590px;
+  padding: 4.5rem 0 4rem;
+  background:
+    #04251a url('/img/home/hero_background_pcb.png') center / cover no-repeat;
+  color: #fff;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgb(39 143 89 / 24%),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(2 30 21 / 38%) 0%,
+      rgb(1 21 15 / 80%) 100%
+    );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.heroEyebrow,
+.sectionEyebrow,
+.eyebrow {
+  color: #36b875;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  margin: 0.25rem 0 0;
+  color: #fff;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.heroTitle strong {
+  color: #32a866;
+  font-weight: 800;
+}
+
+.heroSubtitle {
+  margin: 1rem 0 2.25rem;
+  color: rgb(255 255 255 / 82%);
+  font-size: clamp(1rem, 2vw, 1.28rem);
+  font-weight: 500;
+}
+
+.videoCard {
+  display: grid;
+  width: min(760px, 100%);
+  grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 18px;
+  background: rgb(1 18 13 / 86%);
+  box-shadow: 0 24px 65px rgb(0 0 0 / 36%);
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.videoCard:hover {
+  border-color: rgb(55 190 120 / 46%);
+  box-shadow: 0 30px 75px rgb(0 0 0 / 44%);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-4px);
+}
+
+.videoImageWrapper {
+  position: relative;
+  min-height: 270px;
   overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+.videoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.videoCard:hover .videoImage {
+  transform: scale(1.025);
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 68px;
+  height: 68px;
+  padding-left: 4px;
+  border: 1px solid rgb(255 255 255 / 58%);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 92%);
+  box-shadow: 0 12px 36px rgb(0 0 0 / 35%);
+  color: #081a13;
+  font-size: 1.55rem;
+  place-items: center;
+  transform: translate(-50%, -50%);
+}
+
+.videoContent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.videoTitle {
+  margin: 0.55rem 0 0.8rem;
+  color: #fff;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  line-height: 1.18;
+}
+
+.videoDescription {
+  margin: 0 0 1rem;
+  color: rgb(255 255 255 / 70%);
+  line-height: 1.6;
+}
+
+.videoLink {
+  color: #38bf79;
+  font-weight: 750;
+}
+
+.devicesSection {
+  padding: 4.5rem 0 5rem;
+  background:
+    radial-gradient(circle at 50% 0%, rgb(36 143 86 / 7%), transparent 32%),
+    var(--ifm-background-color);
+}
+
+.sectionHeading {
+  max-width: 720px;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  margin: 0.3rem 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  letter-spacing: -0.035em;
+}
+
+.sectionDescription {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1.04rem;
+  line-height: 1.65;
+}
+
+.deviceGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.deviceCard {
+  display: flex;
+  min-width: 0;
+  padding: 1rem 1rem 1.4rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  background: var(--ifm-card-background-color);
+  box-shadow: 0 9px 28px rgb(13 46 31 / 8%);
+  color: inherit;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.deviceCard:hover {
+  border-color: rgb(42 164 98 / 54%);
+  box-shadow: 0 16px 38px rgb(13 46 31 / 14%);
+  color: inherit;
+  text-decoration: none;
+  transform: translateY(-5px);
+}
+
+.deviceImageArea {
+  display: grid;
+  height: 155px;
+  margin-bottom: 0.7rem;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle, rgb(43 164 98 / 10%), transparent 64%);
+  place-items: center;
+}
+
+.deviceImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 200ms ease;
+}
+
+.deviceCard:hover .deviceImage {
+  transform: scale(1.04);
+}
+
+.deviceName {
+  margin: 0.25rem 0 0.5rem;
+  color: #26935a;
+  font-size: 1.3rem;
+}
+
+.deviceDescription {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.allDevicesWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.2rem;
+}
+
+.allDevicesButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.7rem 1.5rem;
+  gap: 0.7rem;
+  border: 1px solid #2aa462;
+  border-radius: 9px;
+  color: #218750;
+  font-weight: 750;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.allDevicesButton:hover {
+  background: #238d54;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .devicesSection {
+  background:
+    radial-gradient(circle at 50% 0%, rgb(40 174 103 / 10%), transparent 34%),
+    var(--ifm-background-color);
+}
+
+[data-theme='dark'] .deviceCard {
+  box-shadow: 0 12px 30px rgb(0 0 0 / 22%);
+}
+
+@media (max-width: 1100px) {
+  .deviceGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (max-width: 800px) {
+  .hero {
+    min-height: unset;
+    padding: 3.5rem 0;
+  }
+
+  .videoCard {
+    grid-template-columns: 1fr;
+  }
+
+  .videoImageWrapper {
+    min-height: 220px;
+  }
+
+  .deviceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .heroTitle {
+    font-size: 3.15rem;
+  }
+
+  .deviceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .deviceImageArea {
+    height: 190px;
+  }
 }

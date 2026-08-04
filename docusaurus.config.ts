@@ -74,70 +74,82 @@ const config: Config = {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
 
     navbar: {
       title: 'TegridyFarm',
       logo: {
         alt: 'TegridyFarm Logo',
-        src: 'img/logo.svg',
+        src: 'img/TF_Logo.png',
       },
-
+    
       items: [
+        // Product-family selector
         {
-          href: 'https://tegridyfarm.de',
-          label: 'Homepage',
+          type: 'dropdown',
+          label: 'TBOX Family',
           position: 'left',
-        },
-        {
           to: '/docs/tbox',
-          label: 'TBOX',
-          position: 'left',
-          activeBaseRegex: '/docs/tbox/',
-        },
-        {
-          label: 'TempBox',
-          position: 'left',
           items: [
             {
-              label: 'Documentation coming later',
+              label: 'TBOX Family',
+              to: '/docs/tbox',
+            },
+            {
+              label: 'TempBox Family',
+              to: '/docs/tempbox',
+            },
+          ],
+        },
+    
+        // Devices belonging to the selected family
+        {
+          label: 'TBOX',
+          to: '/docs/tbox/devices/tbox/technical-data',
+          position: 'left',
+          activeBaseRegex: '/docs/tbox/devices/tbox/',
+        },
+        {
+          label: 'SBOX',
+          to: '/docs/tbox/devices/sbox/technical-data',
+          position: 'left',
+          activeBaseRegex: '/docs/tbox/devices/sbox/',
+        },
+        {
+          label: 'PBOX',
+          to: '/docs/tbox/devices/pbox/technical-data',
+          position: 'left',
+          activeBaseRegex: '/docs/tbox/devices/pbox/',
+        },
+        {
+          label: 'VBOX',
+          to: '/docs/tbox/devices/vbox/technical-data',
+          position: 'left',
+          activeBaseRegex: '/docs/tbox/devices/vbox/',
+        },
+        {
+          label: 'HBOX',
+          to: '/docs/tbox/devices/hbox/technical-data',
+          position: 'left',
+          activeBaseRegex: '/docs/tbox/devices/hbox/',
+        },
+    
+        // Hardware-generation selector
+        {
+          type: 'dropdown',
+          label: 'Hardware 1.x',
+          position: 'right',
+          items: [
+            {
+              label: 'Hardware 1.x',
               to: '/docs/tbox',
             },
           ],
         },
+    
         {
-          label: 'TBOX',
-          position: 'right',
-          items: [
-            {
-              label: 'TBOX',
-              to: '/docs/tbox/devices/tbox/technical-data',
-            },
-            {
-              label: 'SBOX',
-              to: '/docs/tbox/devices/sbox/technical-data',
-            },
-            {
-              label: 'PBOX',
-              to: '/docs/tbox',
-            },
-            {
-              label: 'VBOX',
-              to: '/docs/tbox',
-            },
-            {
-              label: 'HBOX',
-              to: '/docs/tbox',
-            },
-          ],
-        },
-        {
-          type: 'docsVersionDropdown',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/TegridyFarm96',
+          href: 'https://github.com/TegridyFarm96/tbox',
           label: 'GitHub',
           position: 'right',
         },

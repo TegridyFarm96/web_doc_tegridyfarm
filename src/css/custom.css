@@ -34,3 +34,22 @@
   margin: 0.9rem 0.75rem;
   background: var(--ifm-color-emphasis-300);
 }
+
+.navbar__brand {
+  gap: 0.55rem;
+}
+
+.navbar__logo {
+  height: 34px;
+  width: auto;
+}
+
+.navbar__title {
+  font-size: 1.08rem;
+  font-weight: 850;
+  letter-spacing: -0.025em;
+}
+
+.navbar__title::first-letter {
+  color: var(--ifm-color-primary);
+}
