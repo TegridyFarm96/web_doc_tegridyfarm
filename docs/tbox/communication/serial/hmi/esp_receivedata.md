@@ -1,9 +1,8 @@
 ---
-title: Communication
-sidebar_position: 1
+title: Receive Data
+sidebar_position: 4
 ---
 
-# Communication
 
 All devices in the TBOX product family use a common communication structure.
 

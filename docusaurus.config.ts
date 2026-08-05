@@ -85,73 +85,50 @@ const config: Config = {
       },
     
       items: [
-        // Product-family selector
+
         {
-          type: 'dropdown',
-          label: 'TBOX Family',
+          label: 'Family',
           position: 'left',
-          to: '/docs/tbox',
           items: [
             {
-              label: 'TBOX Family',
+              label: 'TBOX',
               to: '/docs/tbox',
             },
             {
-              label: 'TempBox Family',
+              label: 'TempBox',
               to: '/docs/tempbox',
             },
           ],
         },
     
-        // Devices belonging to the selected family
         {
-          label: 'TBOX',
-          to: '/docs/tbox/devices/tbox/technical-data',
+          label: 'Model',
           position: 'left',
-          activeBaseRegex: '/docs/tbox/devices/tbox/',
-        },
-        {
-          label: 'SBOX',
-          to: '/docs/tbox/devices/sbox/technical-data',
-          position: 'left',
-          activeBaseRegex: '/docs/tbox/devices/sbox/',
-        },
-        {
-          label: 'PBOX',
-          to: '/docs/tbox/devices/pbox/technical-data',
-          position: 'left',
-          activeBaseRegex: '/docs/tbox/devices/pbox/',
-        },
-        {
-          label: 'VBOX',
-          to: '/docs/tbox/devices/vbox/technical-data',
-          position: 'left',
-          activeBaseRegex: '/docs/tbox/devices/vbox/',
-        },
-        {
-          label: 'HBOX',
-          to: '/docs/tbox/devices/hbox/technical-data',
-          position: 'left',
-          activeBaseRegex: '/docs/tbox/devices/hbox/',
-        },
-    
-        // Hardware-generation selector
-        {
-          type: 'dropdown',
-          label: 'Hardware 1.x',
-          position: 'right',
           items: [
             {
-              label: 'Hardware 1.x',
+              label: 'TBOX',
               to: '/docs/tbox',
+            },
+            {
+              label: 'TBOX Pro',
+              to: '/docs/tbox_pro',
+            },
+            {
+              label: 'TBOX Mini',
+              to: '/docs/tbox_mini',
             },
           ],
         },
     
         {
-          href: 'https://github.com/TegridyFarm96/tbox',
-          label: 'GitHub',
+          label: 'Hardware',
           position: 'right',
+          items: [
+            {
+              label: '1.x',
+              to: '/docs/tbox',
+            },
+          ],
         },
       ],
     },

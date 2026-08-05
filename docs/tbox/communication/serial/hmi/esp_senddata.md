@@ -1,9 +1,9 @@
 ---
-title: Communication
-sidebar_position: 1
+title: Send Data
+sidebar_position: 3
 ---
 
-# Communication
+# Send Data
 
 All devices in the TBOX product family use a common communication structure.
 
