@@ -17,7 +17,7 @@ Internally, the TBOX operates with three supply voltages:
 
 The mains section is electrically isolated from the low-voltage electronics using optocouplers.
 
-![TBOX Hardware Architecture](/uml/tbox/hw_tbox.svg)
+![TBOX Hardware Architecture](/drawio/hw_tbox.svg)
 
 ---
 
