@@ -1,0 +1,6 @@
+label: MQTT
+position: 2
+collapsed: true
+link:
+  type: doc
+  id: tbox/development/communication/mqtt/overview

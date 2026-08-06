@@ -1,0 +1,165 @@
+@startuml
+title TBOX Hardware Overview
+
+left to right direction
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam roundCorner 12
+skinparam linetype ortho
+skinparam componentStyle rectangle
+skinparam defaultTextAlignment center
+
+skinparam package {
+    BackgroundColor #F7F7F7
+    BorderColor #777777
+    FontStyle bold
+}
+
+skinparam rectangle {
+    BackgroundColor white
+    BorderColor #666666
+}
+
+skinparam component {
+    BackgroundColor white
+    BorderColor #555555
+}
+
+skinparam ArrowColor #555555
+skinparam ArrowThickness 1.3
+
+' =========================================================
+' External communication
+' =========================================================
+
+package "External Interfaces" as EXTERNAL {
+
+    rectangle "DWIN HMI" as HMI
+    rectangle "USB-C 1\nProgramming" as USB1
+    rectangle "USB-C 2\nProgramming" as USB2
+    rectangle "Wi-Fi Network\nMQTT · Web Server" as WIFI
+}
+
+' =========================================================
+' Main PCB
+' =========================================================
+
+package "Main PCB" as MAIN {
+
+    rectangle "HLW8032\nEnergy Measurement" as HLW
+
+    rectangle "MCP23017\nGPIO Expander" as MCP
+
+    rectangle "ESP32-S3\nMain Controller" as ESP #E9F7EC
+
+    rectangle "STM32\nPhase Control" as STM
+
+    rectangle "PCA9548A\nI²C Multiplexer" as PCA
+
+    rectangle "Status LED\nSK6812" as LED
+
+    rectangle "Main PCB Connector\nPower + Control Signals" as MAINCON
+}
+
+' =========================================================
+' Side PCB
+' =========================================================
+
+package "Side PCB" as SIDE {
+
+    rectangle "Side PCB Connector" as SIDECON
+
+    rectangle "Sockets 1–6\nOn / Off" as SOCKETS
+
+    rectangle "Socket 7\nPhase Control\nResistive Load Only" as PHASE
+
+    rectangle "0–10 V Outputs\nDimmer 1–4" as DIMMERS
+
+    rectangle "Pump Outputs\n1–5" as PUMPS
+
+    rectangle "Valve / Relay Outputs\n1–5" as VALVES
+}
+
+' =========================================================
+' Expansion devices
+' =========================================================
+
+package "Expansion Devices" as EXTENSIONS {
+
+    rectangle "SBOX\nSensor Extension" as SBOX
+    rectangle "PBOX\nPump Extension" as PBOX
+    rectangle "VBOX\nValve / Level Extension" as VBOX
+    rectangle "HBOX\nTODO" as HBOX
+}
+
+' =========================================================
+' Main communication
+' =========================================================
+
+HMI <--> ESP : UART
+
+USB1 --> ESP : Programming
+USB2 --> ESP : Programming
+
+WIFI <--> ESP : Wi-Fi
+
+HLW --> ESP : UART RX\nMeasurement Data
+
+ESP --> STM : UART TX\nFrequency + Setpoint
+
+ESP <--> MCP : I²C
+
+ESP <--> PCA : I²C
+
+ESP --> LED : One-Wire Data
+
+' =========================================================
+' Main PCB to Side PCB
+' =========================================================
+
+ESP --> MAINCON : Control Signals
+MCP --> MAINCON : Digital Outputs
+STM --> MAINCON : Phase Trigger
+
+MAINCON <==> SIDECON : Board-to-Board Connection
+
+SIDECON --> SOCKETS
+SIDECON --> PHASE
+SIDECON --> DIMMERS
+SIDECON --> PUMPS
+SIDECON --> VALVES
+
+' =========================================================
+' Expansion devices
+' =========================================================
+
+ESP <--> SBOX : TODO\nCommunication Interface
+ESP <--> PBOX : TODO\nCommunication Interface
+ESP <--> VBOX : TODO\nCommunication Interface
+ESP <--> HBOX : TODO
+
+' =========================================================
+' Layout helpers
+' =========================================================
+
+HMI -[hidden]-> USB1
+USB1 -[hidden]-> USB2
+USB2 -[hidden]-> WIFI
+
+HLW -[hidden]-> MCP
+MCP -[hidden]-> ESP
+ESP -[hidden]-> STM
+STM -[hidden]-> PCA
+PCA -[hidden]-> LED
+
+SOCKETS -[hidden]-> PHASE
+PHASE -[hidden]-> DIMMERS
+DIMMERS -[hidden]-> PUMPS
+PUMPS -[hidden]-> VALVES
+
+SBOX -[hidden]-> PBOX
+PBOX -[hidden]-> VBOX
+VBOX -[hidden]-> HBOX
+
+@enduml
