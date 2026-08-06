@@ -1,0 +1,6 @@
+label: Sensor
+position: 1
+collapsed: true
+link:
+  type: doc
+  id: tbox/development/definition/sensor/overview

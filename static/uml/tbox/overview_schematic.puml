@@ -1,0 +1,24 @@
+@startwbs
+* TBox
+
+** SBox
+***_ 8× I²C Sensors
+***_ 3× DS18B20 Sensors
+***_ 2× Analog Inputs (0–5 V)
+***_ 1× BNC pH Sensor
+
+
+** PBox
+***_ 5x Dosing Pump
+***_ 1× Analog Inputs (0-10V)
+
+
+** VBox
+***_ 5x Digitial Outputs (24V DC)
+***_ 2x Digital Input / Cap. Sensor (5V or 24V)
+***_ 1× Analog Inputs (0-10V)
+
+** HBox
+
+
+@endwbs

@@ -1,6 +1,6 @@
 ---
-title: Receive Data
-sidebar_position: 4
+title: Definitions
+sidebar_position: 1
 ---
 
 

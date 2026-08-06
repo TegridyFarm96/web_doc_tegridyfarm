@@ -1,3 +1,6 @@
 label: Devices
 position: 3
 collapsed: true
+link:
+  type: doc
+  id: tbox/devices/overview

@@ -1,23 +1,15 @@
 ---
-id: overview
-title: Overview
-slug: /tbox
+title: Devices
 sidebar_position: 1
 ---
 
-## Product Family Overview
-
-![TBOX product family connection overview](/uml/tbox/overview_schematic.svg)
-
-The TBOX product family provides modular control, switching and monitoring solutions.
-
-The **TBOX** is the central control unit. Additional devices can be connected to extend the available sensors, actuators and control functions.
+Explore the hardware, technical specifications and firmware information for every device in the TBOX product family.
 
 ## Available Devices
 
 <div className="device-grid">
 
-  <a className="device-card" href="./tbox/devices/tbox/overview">
+  <a className="device-card" href="./tbox/overview">
     <h3>TBOX</h3>
     <img
       src="/uml/tbox/overview_schematic.svg"
@@ -28,7 +20,7 @@ The **TBOX** is the central control unit. Additional devices can be connected to
     </p>
   </a>
 
-  <a className="device-card" href="./tbox/devices/sbox/overview">
+  <a className="device-card" href="./sbox/overview">
     <h3>SBOX</h3>
     <img
       src="/uml/tbox/overview_schematic.svg"
@@ -39,7 +31,7 @@ The **TBOX** is the central control unit. Additional devices can be connected to
     </p>
   </a>
 
-  <a className="device-card" href="./tbox/devices/pbox/overview">
+  <a className="device-card" href="./pbox/overview">
     <h3>PBOX</h3>
     <img
       src="/uml/tbox/overview_schematic.svg"
@@ -50,7 +42,7 @@ The **TBOX** is the central control unit. Additional devices can be connected to
     </p>
   </a>
 
-  <a className="device-card" href="./tbox/devices/vbox/overview">
+  <a className="device-card" href="./vbox/overview">
     <h3>VBOX</h3>
     <img
       src="/uml/tbox/overview_schematic.svg"
@@ -61,7 +53,7 @@ The **TBOX** is the central control unit. Additional devices can be connected to
     </p>
   </a>
 
-  <a className="device-card" href="./tbox/devices/hbox/overview">
+  <a className="device-card" href="./hbox/overview">
     <h3>HBOX</h3>
     <img
       src="/uml/tbox/overview_schematic.svg"
