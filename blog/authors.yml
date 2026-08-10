@@ -1,25 +1,17 @@
-yangshun:
-  name: Yangshun Tay
-  title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
-  url: https://linkedin.com/in/yangshun
-  image_url: https://github.com/yangshun.png
-  page: true
-  socials:
-    x: yangshunz
-    linkedin: yangshun
-    github: yangshun
-    newsletter: https://www.greatfrontend.com
+ricardojacoby:
+  name: Ricardo Jacoby
+  title: Co-Founder · PLC Automation & Software Developer
+  url: https://tegridyfarm.de
+  image_url: /img/blog/ricardo.jpg
+    x: silverhand_77_
+    linkedin: ricardo-jacoby-689215343
+    github: Iceman12rico
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
-  socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
+dennisvoelker:
+  name: Dennis Völker
+  title: Co-Founder · Process Control Engineer & Data Science
+  url: https://tegridyfarm.de
+  image_url: /img/blog/dennis.jpg
+    # x: yangshunz
+    linkedin: dennis-völker-torres-575b39409
+    # github: yangshun
