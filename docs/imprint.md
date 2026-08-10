@@ -11,18 +11,18 @@ Information pursuant to Section 5 of the German Digital Services Act (DDG).
 
 **TegridyFarm GbR**
 
-Georg-Friedrich-Händel Weg 3
-68723 Plankstadt
-Germany
+Georg-Friedrich-Händel Weg 3  
+68723 Plankstadt  
+Germany  
 
 Represented by:
 
+**Dennis Völker**  
 **Ricardo Jacoby**  
-**[Name of second partner]**
 
 ## Contact
 
-Email: support@tegridyfarm.de
+Email: support@tegridyfarm.de  
 Website: tegridyfarm.de
 
 ## Responsible for Content
@@ -31,13 +31,13 @@ Responsible for the content of this website in accordance with Section 18 (2) MS
 
 **Ricardo Jacoby**  
 Georg-Friedrich-Händel Weg 3  
-68723 Plankstadt
-Germany
+68723 Plankstadt  
+Germany  
 
 **Dennis Völker**  
-Friedrichstraße 49 
-68199 Mannheim-Neckarau
-Germany
+Friedrichstraße 49  
+68199 Mannheim-Neckarau   
+Germany  
 
 ## Liability for Content
 
