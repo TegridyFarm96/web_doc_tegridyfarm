@@ -111,11 +111,11 @@ const config: Config = {
             },
             {
               label: 'TBOX Pro',
-              to: '/docs/tbox_pro',
+              to: '/',
             },
             {
               label: 'TBOX Mini',
-              to: '/docs/tbox_mini',
+              to: '/',
             },
           ],
         },
