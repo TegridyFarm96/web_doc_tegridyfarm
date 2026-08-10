@@ -41,10 +41,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+
         },
         blog: {
           showReadingTime: true,
@@ -100,35 +97,14 @@ const config: Config = {
             },
           ],
         },
-    
+        
         {
-          label: 'Model',
-          position: 'left',
-          items: [
-            {
-              label: 'TBOX',
-              to: '/docs/tbox',
-            },
-            {
-              label: 'TBOX Pro',
-              to: '/',
-            },
-            {
-              label: 'TBOX Mini',
-              to: '/',
-            },
-          ],
-        },
-    
-        {
-          label: 'Hardware',
+          to: '/blog',
+          label: 'Blog',
           position: 'right',
-          items: [
-            {
-              label: '1.x',
-              to: '/docs/tbox',
-            },
-          ],
+
+
+
         },
       ],
     },
