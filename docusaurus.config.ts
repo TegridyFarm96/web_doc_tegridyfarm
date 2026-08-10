@@ -192,11 +192,11 @@ const config: Config = {
           items: [
             {
               label: 'Imprint',
-              href: '/imprint',
+              href: '/docs/imprint',
             },
             {
               label: 'Privacy Policy',
-              href: '/privacy',
+              href: '/docs/privacy',
             },
           ],
         },
