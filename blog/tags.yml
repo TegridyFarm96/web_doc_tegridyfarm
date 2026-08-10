@@ -13,11 +13,6 @@ behind-the-scenes:
   permalink: /behind-the-scenes
   description: A look behind the scenes at TegridyFarm
 
-tbox:
-  label: TBOX
-  permalink: /tbox
-  description: News and development around the TBOX platform
-
 automation:
   label: Automation
   permalink: /automation
@@ -27,3 +22,28 @@ tegridyfarm:
   label: TegridyFarm
   permalink: /tegridyfarm
   description: General TegridyFarm news and updates
+
+tbox:
+  label: TBOX
+  permalink: /tbox
+  description: News and development around the TBOX platform
+
+sbox:
+  label: SBOX
+  permalink: /sbox
+  description: News and development around the SBOX platform
+
+pbox:
+  label: PBOX
+  permalink: /pbox
+  description: News and development around the PBOX platform
+
+vbox:
+  label: VBOX
+  permalink: /vbox
+  description: News and development around the VBOX platform
+
+hbox:
+  label: HBOX
+  permalink: /hbox
+  description: News and development around the HBOX platform
