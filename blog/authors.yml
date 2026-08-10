@@ -2,7 +2,8 @@ ricardojacoby:
   name: Ricardo Jacoby
   title: Co-Founder · PLC Automation & Software Developer
   url: https://tegridyfarm.de
-  image_url: /img/blog/ricardo.jpg
+  image_url: /img/blog/ricardo.png
+  socials:
     x: silverhand_77_
     linkedin: ricardo-jacoby-689215343
     github: Iceman12rico
@@ -11,7 +12,6 @@ dennisvoelker:
   name: Dennis Völker
   title: Co-Founder · Process Control Engineer & Data Science
   url: https://tegridyfarm.de
-  image_url: /img/blog/dennis.jpg
-    # x: yangshunz
+  image_url: /img/blog/dennis.png
+  socials:
     linkedin: dennis-völker-torres-575b39409
-    # github: yangshun

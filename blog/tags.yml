@@ -1,19 +1,29 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+hardware:
+  label: Hardware
+  permalink: /hardware
+  description: Hardware development and electronics
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+development:
+  label: Development
+  permalink: /development
+  description: Development progress and behind-the-scenes updates
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+behind-the-scenes:
+  label: Behind the Scenes
+  permalink: /behind-the-scenes
+  description: A look behind the scenes at TegridyFarm
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+tbox:
+  label: TBOX
+  permalink: /tbox
+  description: News and development around the TBOX platform
+
+automation:
+  label: Automation
+  permalink: /automation
+  description: Automation and control technology
+
+tegridyfarm:
+  label: TegridyFarm
+  permalink: /tegridyfarm
+  description: General TegridyFarm news and updates
