@@ -84,7 +84,7 @@ const config: Config = {
       items: [
 
         {
-          label: 'Family',
+          label: 'Product',
           position: 'left',
           items: [
             {
