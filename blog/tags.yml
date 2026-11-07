@@ -47,3 +47,8 @@ hbox:
   label: HBOX
   permalink: /hbox
   description: News and development around the HBOX platform
+
+tempbox:
+  label: TempBox
+  permalink: /tempbox
+  description: News and development around the TempBox
