@@ -63,9 +63,9 @@ For each port:
 
 Press **Rescan** after connecting new sensors, then **Save settings**.
 
-:::tip Identifying sensors
+:::warning Check the port order
 
-To find out which sensor is which, connect them one at a time and press **Rescan** after each one, or warm a single sensor in your hand and watch which value changes.
+Sensors are always detected on the correct bus (A–D), but **not** on the correct port (1–4) within a bus. Check and correct the assignment, especially if a bus has two or more sensors. See [Hardware → Sensor Assignment](./hardware.md#sensor-assignment) for two step-by-step methods.
 
 :::
 

@@ -14,8 +14,6 @@ The **TempBox** is a standalone temperature monitoring device for **water-based 
 
 Underfloor heating systems typically consist of several heating circuit manifolds (distributors), each feeding multiple heating loops (hoses). The TempBox measures these temperatures with up to **16 DS18B20 sensors** on **four independent OneWire buses (A–D)**, giving you a clear picture of how your heating system is actually performing.
 
-An integrated **BME280** environmental sensor measures room temperature, humidity and air pressure. From these values the TempBox calculates the **dew point**, helping to detect condensation risk, for example when the system is used for floor cooling.
-
 All values are available via **Wi-Fi / MQTT** with **Home Assistant auto-discovery**, and the device can be configured through its integrated **web server**.
 
 :::info
@@ -30,8 +28,6 @@ The TempBox is a **standalone device**. It is not part of the TBOX product famil
 - 4 independent OneWire buses (A–D) with up to 4 sensors each
 - 16 labelled RJ11 sensor ports (A1–D4)
 - Per-sensor calibration offset
-- Integrated BME280 for room temperature, humidity and air pressure
-- Dew point calculation
 - Wi-Fi with MQTT and Home Assistant auto-discovery
 - Integrated web server for configuration
 - OTA firmware updates

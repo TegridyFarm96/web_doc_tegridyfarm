@@ -18,8 +18,6 @@ description: Technical specifications of the TegridyFarm TempBox.
 | **Temperature Sensors** | Up to 16 × DS18B20 |
 | **Sensor Buses** | 4 × OneWire (A–D), max. 4 sensors per bus |
 | **Sensor Ports** | 16 × RJ11 (6P4C) |
-| **Environmental Sensor** | BME280 (temperature, humidity, pressure) |
-| **Calculated Values** | Dew point |
 | **Firmware Updates** | OTA and USB-C |
 | **Mounting** | Magnetic |
 
@@ -43,7 +41,6 @@ The values below are **calculated** from the component datasheets for a fully eq
 |:---|---:|---:|:---|
 | ESP32-S3 (Wi-Fi connected) | ~ 100 mA | ~ 340 mA | Wi-Fi power save is disabled; peak during Wi-Fi transmission |
 | 16 × DS18B20 | ~ 6 mA | 24 mA | 1.5 mA max. per sensor during conversion, ~1 µA standby |
-| BME280 | < 0.1 mA | < 1 mA | |
 | Pull-ups, regulator, misc. | ~ 10 mA | ~ 15 mA | Estimate |
 | **Total** | **≈ 120 mA** | **≈ 380 mA** | |
 
@@ -98,14 +95,6 @@ Detailed connector pinouts can be found in the **Hardware → Connectors** secti
 | Accuracy | ±0.5 °C from -10 °C to +85 °C *(sensor specification)* |
 | Calibration Offset | -5.0 °C to +5.0 °C per sensor |
 | Read Interval | 5 s |
-
-## Environmental Sensor
-
-| Parameter | Value |
-|:---|:---|
-| Sensor Type | BME280 |
-| Measured Values | Temperature, relative humidity, air pressure |
-| Calculated Values | Dew point |
 
 ---
 

@@ -11,7 +11,6 @@ The TempBox is built around an **ESP32-S3** and provides:
 
 - **16 × RJ11 (6P4C)** sensor ports (A1–D4), 8 on each side of the enclosure
 - **4 independent OneWire buses** (A–D) for DS18B20 temperature sensors
-- An internal **BME280** for ambient temperature, humidity and air pressure
 - **USB-C** for power supply and programming
 
 ---
@@ -29,13 +28,38 @@ The sensor ports are grouped into four independent OneWire buses. Each bus suppo
 
 All four ports of a bus share the same OneWire data line. Splitting the sensors across four buses keeps cable lengths per bus short and allows, for example, one bus per heating circuit manifold.
 
-:::info Sensor assignment
+## Sensor Assignment
 
-Because all ports of a bus are electrically connected, the TempBox cannot detect **which jack** a sensor is plugged into. Each DS18B20 is identified by its unique 64-bit ROM address instead.
+**The buses are always correct.** Each bus has its own GPIO, so a sensor plugged into a B port always appears on bus B, never on A, C or D.
 
-New sensors are automatically assigned to the next free port of their bus. To match the sensors to the physical ports or heating circuits, assign them manually in the [web server](./webserver.md#settings). The assignment is stored permanently.
+**The port within a bus is not.** All four ports of a bus share the same data line, so the TempBox cannot detect **which jack** (1–4) a sensor is plugged into. Each DS18B20 is identified only by its unique 64-bit ROM address. New sensors are assigned to the first free port of their bus in the order in which the bus finds them, which has nothing to do with the physical jack.
+
+:::warning Check the port order
+
+This applies whenever a bus has **two, three or four sensors**: their order is not guaranteed, and a sensor plugged into A1 may show up as A2 and vice versa. You have to check the assignment and correct it in the [web server](./webserver.md#settings) if needed. The assignment is stored permanently.
+
+Even a **single sensor** on a bus is always assigned to port 1 first. If it is plugged into A3, for example, move it to A3 in the web server.
 
 :::
+
+There are two ways to assign the sensors correctly:
+
+### Option 1: Connect the sensors port by port
+
+1. Connect only the sensors for **A1, B1, C1 and D1**.
+2. Press **Rescan** in the web server. Each bus has exactly one sensor, so it is assigned to port 1.
+3. Connect the sensors for **A2, B2, C2 and D2** and press **Rescan** again. Already assigned sensors keep their port, the new sensors are assigned to port 2.
+4. Repeat for ports 3 and 4.
+
+### Option 2: Connect all sensors and identify them by warming
+
+1. Connect all sensors and press **Rescan**.
+2. With all sensors at room temperature, warm up **one** sensor in your hand.
+3. On the [overview page](./webserver.md#overview-page), the warmed sensor shows a clearly higher value than the others on its bus.
+4. If it is not shown at the port it is plugged into, select its address for the correct port on the [settings page](./webserver.md#settings).
+5. Repeat for every bus with more than one sensor.
+
+Do this **before** mounting the sensors on the heating system, while all of them are still at the same temperature.
 
 ---
 
@@ -78,17 +102,3 @@ The sensor ports are **not** telephone or network ports. Do not connect telephon
 | Programming | Firmware flashing via USB |
 
 Firmware can also be updated **over the air (OTA)**, so the USB connection is not required for regular updates.
-
----
-
-# Internal Sensors
-
-## BME280
-
-The BME280 is mounted inside the enclosure and measures:
-
-- Ambient temperature
-- Relative humidity
-- Air pressure
-
-From temperature and humidity the TempBox calculates the **dew point**.

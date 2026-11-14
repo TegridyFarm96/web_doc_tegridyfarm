@@ -9,7 +9,7 @@ The FloorGuard publishes all sensor values via **MQTT** and supports **Home Assi
 
 :::note Preliminary
 
-The topic structure follows the [TempBox](../tempbox/mqtt.md). The climate topics are preliminary and may change until the first firmware release.
+The topic structure follows the [TempBox](../tempbox/mqtt.md). The climate topic and the `dew_point_margin` field are preliminary and may change until the first firmware release.
 
 :::
 
@@ -43,6 +43,7 @@ A port is reported as `offline` if no sensor is assigned or the assigned sensor 
   "temperature": 31.75,
   "raw": 31.50,
   "offset": 0.25,
+  "dew_point_margin": 17.95,
   "port": "A1"
 }
 ```
@@ -52,18 +53,17 @@ A port is reported as `offline` if no sensor is assigned or the assigned sensor 
 | `temperature` | Corrected temperature in °C (raw + offset) |
 | `raw` | Measured temperature in °C |
 | `offset` | Calibration offset in °C |
+| `dew_point_margin` | `temperature` − room dew point in K; ≤ 0 means condensation |
 | `port` | Port name |
 
 ---
 
-## Climate Sensors
-
-`<DIST>` is the distribution (`A` … `D`) or `room` for the internal BME280:
+## Room Climate
 
 | Topic | Direction | Retained | Payload |
 |:---|:---:|:---:|:---|
-| `tf_floorguard/<MAC>/climate_<DIST>/state` | Publish | ✅ | JSON, see below |
-| `tf_floorguard/<MAC>/climate_<DIST>/availability` | Publish | ✅ | `online` / `offline` |
+| `tf_floorguard/<MAC>/climate/state` | Publish | ✅ | JSON, see below |
+| `tf_floorguard/<MAC>/climate/availability` | Publish | ✅ | `online` / `offline` |
 
 ### State payload
 
@@ -72,18 +72,16 @@ A port is reported as `offline` if no sensor is assigned or the assigned sensor 
   "temperature": 22.4,
   "humidity": 58.2,
   "pressure": 1013.6,
-  "dew_point": 13.8,
-  "distribution": "A"
+  "dew_point": 13.8
 }
 ```
 
 | Field | Description |
 |:---|:---|
-| `temperature` | Air temperature in °C |
+| `temperature` | Room temperature in °C |
 | `humidity` | Relative humidity in % |
 | `pressure` | Air pressure in hPa |
 | `dew_point` | Calculated dew point in °C |
-| `distribution` | `A` … `D`, or `room` |
 
 ---
 
@@ -105,14 +103,15 @@ The FloorGuard publishes retained discovery messages after every connection to t
 | Entity | Discovery Topic |
 |:---|:---|
 | 16 × temperature sensor | `homeassistant/sensor/tf_floorguard_<MAC>/<PORT>/config` |
-| 5 × climate sensor (temperature, humidity, pressure, dew point each) | `homeassistant/sensor/tf_floorguard_<MAC>/climate_<DIST>_<VALUE>/config` |
+| 16 × dew point margin | `homeassistant/sensor/tf_floorguard_<MAC>/<PORT>_margin/config` |
+| Room climate (temperature, humidity, pressure, dew point) | `homeassistant/sensor/tf_floorguard_<MAC>/climate_<VALUE>/config` |
 | Access point switch | `homeassistant/switch/tf_floorguard_<MAC>/ap/config` |
 
 All entities are grouped under one device (manufacturer *TegridyFarm*, model *TF FloorGuard*). Sensors use the matching `device_class` (`temperature`, `humidity`, `atmospheric_pressure`) and `state_class: measurement`, so they work with Home Assistant statistics and history graphs.
 
 :::tip Condensation warning
 
-Compare the flow temperature of a distribution with its `dew_point` in a Home Assistant automation, e.g. to stop floor cooling or raise the flow temperature once the margin drops below 2 K.
+Use the `dew_point_margin` of each string in a Home Assistant automation, e.g. to stop floor cooling or raise the flow temperature of a distribution once the margin of one of its strings drops below 2 K.
 
 :::
 

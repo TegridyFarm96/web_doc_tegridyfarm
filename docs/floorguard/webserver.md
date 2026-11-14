@@ -38,19 +38,17 @@ Configure your Wi-Fi network on the [Wi-Fi](#wi-fi) page. Once connected, the Fl
 
 ## Overview Page
 
-The start page shows all four distributions (A–D).
-
-For each distribution, the **climate sensor** values:
+The start page shows the **room climate** at the top:
 
 | Field | Description |
 |:---|:---|
 | Status | **Online** or **Offline** |
-| Temperature | Air temperature at the manifold |
-| Humidity | Relative humidity at the manifold |
+| Temperature | Room temperature |
+| Humidity | Relative humidity |
 | Pressure | Air pressure |
-| Dew Point | Calculated dew point of this distribution |
+| Dew Point | Calculated dew point of the room air |
 
-and its four temperature ports:
+Below that, all 16 ports grouped by bus (A–D). For each port:
 
 | Field | Description |
 |:---|:---|
@@ -59,8 +57,7 @@ and its four temperature ports:
 | Raw | Measured temperature |
 | Offset | Calibration offset |
 | Temperature | Corrected temperature (raw + offset) |
-
-The room climate of the internal BME280 is shown separately.
+| Dew Point Margin | Temperature − dew point; low or negative values mean condensation risk |
 
 ---
 
@@ -75,9 +72,9 @@ For each port:
 
 Press **Rescan** after connecting new sensors, then **Save settings**.
 
-:::tip Identifying sensors
+:::warning Check the port order
 
-To find out which sensor is which, connect them one at a time and press **Rescan** after each one, or warm a single sensor in your hand and watch which value changes.
+Sensors are always detected on the correct bus (A–D), but **not** on the correct port (1–4) within a bus. Check and correct the assignment, especially if a bus has two or more sensors. See [Hardware → Sensor Assignment](./hardware.md#sensor-assignment) for two step-by-step methods.
 
 :::
 
