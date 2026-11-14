@@ -92,6 +92,10 @@ const config: Config = {
               label: 'TempBox',
               to: '/docs/tempbox',
             },
+            {
+              label: 'FloorGuard',
+              to: '/docs/floorguard',
+            },
           ],
         },
         
